@@ -1,0 +1,313 @@
+
+<!-- saved from url=(0022)http://yaduo.com/Index -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>亚朵ATOUR---人文、温暖、有趣的生活方式品牌</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="亚朵,酒店,亚朵酒店,轻居,公寓,亚朵轻居,亚朵公寓,Atour,YaDuo,AtourHotel,亚朵酒店官方网站,AtourHotel官方网站,人文酒店,酒店,在线销售酒店,云服务酒店,酒店预订,酒店查询,酒店入住">
+    <meta name="description" content="亚朵ATOUR---人文、温暖、有趣的生活方式品牌">
+    <link href="http://www.yaduo.com/favicon.ico" rel="shortcut icon">
+    <link href="01/layout_normal.css" rel="stylesheet">
+    <link href="01/style.css" rel="stylesheet">
+    <link href="01/layer.css" rel="stylesheet">
+    <link href="01/laydate.css" rel="stylesheet">
+    <link href="01/laydate(1).css" rel="stylesheet">
+
+    
+
+    <script src="01/hm.js"></script><script type="text/javascript" src="01/jquery.js"></script>
+    <script type="text/javascript" src="01/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="01/jquery.pagination.js"></script>
+    <script type="text/javascript" src="01/jquery.lazy.js"></script>
+    <script type="text/javascript" src="01/layer.js"></script>
+    <script type="text/javascript" src="01/base.space.js"></script>
+    <script type="text/javascript" src="01/base.js"></script><script type="text/javascript" src="01/hax_dec.js"></script>
+    <script type="text/javascript" src="01/base.extend.js"></script>
+    <script type="text/javascript" src="01/mesignout.js"></script>
+	<script type="text/javascript" src="01/hm002.js"></script>
+
+    
+    
+    <script src="01/laydate.js"></script>
+    <script src="01/index.js"></script>
+    <script src="01/city_data.js"></script>
+    <script src="01/citySelf.js"></script>
+
+
+    <script>
+<!--         var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?fabab653d8532755b944daf1fd030381";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })(); -->
+</script>
+
+</head>
+<body>
+    <!-- 页面布局-开始 -->
+    <!-- 头部-开始 -->
+	<div id="fullback" style="background: url(01/sec_bg.jpg) no-repeat center top fixed; background-size: cover;">
+    <div class="header" style="position: fixed;">
+        <div class="menu">
+            <ul class="nav left" >
+                <li class="active">
+                    <a href="Index.html">首页</a>
+                </li>
+                <li>
+                    <a href="Hotel.html">在线预订</a>
+                </li>
+                <li>
+                    <a href="Experience.html">感受亚朵</a>
+                </li>
+                <li>
+                    <a href="http://yaduo.com/">
+                        <img class="left logo" src="01/LOGO.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="ProductsList.html">睡我所爱</a>
+                </li>
+                <li>
+                    <a href="planetbed.html">亚朵商城</a>
+                </li>
+                <li>
+                    <a href="myIndex.html">我的亚朵</a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="login_place">
+            <a href="javascript:void(0);">登录</a>
+            <a href="javascript:void(0);" style="display: none;">注销</a>
+        </div>
+    </div>
+    <!-- 头部-结束 -->
+    <!-- 容器-开始 -->
+    <div class="container">
+        <section>
+            
+<script>
+    var test = /iphone|ipod|ipad|android|nokia|symbianos|symbian|windows phone|phone|linux armv71|maui|untrusted\/1.0|windows ce|blackberry|iemobile/
+    if (navigator.userAgent.toLowerCase().match(test)) {
+        location.href = "http://WeChat.yaduo.com/weixin/home.html";
+    };
+
+    var params = new Common.Query.M();
+    params.setParameters("AdvertisementType", 1);   //首页AdvertisementType为1
+    //获取广告
+    Atour.Ajax.Get({
+        Url: "/yaduo/Inn/GetAdvertisementByType",
+        DataParam: params.getString(false),
+        FuncName: "changeAdvertisement"
+    });
+    //显示广告
+    function changeAdvertisement(result) {
+        if (result.State == 1) {
+            if (result.Data.ImageUrl != null && result.Data.ImageUrl != "") {         //该位置有广告上线
+                var ImageUrl = result.Data.ImageUrl;
+                var innerString = "";
+                if (result.Data.PageUrl != null && result.Data.PageUrl != "") {
+                    innerString = '<img style="cursor:pointer;  width: 100%;" onclick="location.href =' + "'" + result.Data.PageUrl + "'" + '"src="' + ImageUrl + '">';
+                }
+                else {
+                    innerString = '<img style="width: 100%;" src="' + ImageUrl + '">';
+                }
+                var lastNode = $(".serch_hotel");
+                var newNode = document.createElement("div");
+                newNode.innerHTML = innerString;
+                lastNode.after(newNode);                                              //添加广告元素到网页
+                return;
+            }
+        }
+        return;
+    }
+</script>
+<!-- 首页图片轮播-开始-->
+<div class="index_focus" style="height: 965px;">
+    <a href="javascript:;" class="index_focus_pre" title="上一张" style="display: none;"></a>
+    <a href="javascript:;" class="index_focus_next" title="下一张" style="display: none;"></a>
+    <div class="bd" style="height: 965px;">
+        <ul>
+            <li class="" style="display: none;"><img src="01/003.jpg" class="pic" style="width: 1920px; margin-left: -960px; height: 965px;"><div class="pict_01" style="top:309px;left:986.56px;"><img src="01/index_04.png" style="height:auto;"></div><div class="pict_02">我缘自十万大山，清新自然</div></li>
+            <li class="" style="display: none;"><img src="01/004.jpg" class="pic" style="width: 1920px; margin-left: -960px; height: 965px;"><div class="pict_01" style="top:309px;left:1186.56px;"><img src="01/index_01.png" style="height:auto;"></div></li>
+            <li class="" style="display: none;"><img src="01/005.jpg" class="pic" style="width: 1920px; margin-left: -960px; height: 965px;"><div class="pict_01" style="top:309px;left:586.56px;"><img src="01/index_02.png" style="height:auto;"></div><div class="pict_02">入境尤似归故里，偷闲半日做小童</div></li>
+            <li class="" style="display: none;"><img src="01/006.jpg" class="pic" style="width: 1920px; margin-left: -960px; height: 965px;"><div class="pict_01" style="top:309px;left:986.56px;color: #000;"><img src="01/index_03.png" style="height:auto;"></div><div class="pict_02" style="color: #000;"> 闲来亚朵书边卧，日落黄昏自成眠</div></li>
+        </ul>
+    </div>
+    <div class="slide_nav" style="display: none;">
+        <a href="javascript:;" class="">●</a>
+        <a href="javascript:;" class="">●</a>
+        <a href="javascript:;" class="">●</a>
+        <a href="javascript:;" class="on">●</a>
+    </div>
+</div>
+<script>
+    function preloadImg(list, imgs) {
+        var def = $.Deferred(),
+        len = list.length;
+        $(list).each(function (i, e) {
+            var img = new Image();
+            img.src = e;
+            img.className = "pic";
+            if (img.complete) {
+                imgs[i] = img;
+                len--;
+                if (len == 0) {
+                    def.resolve();
+                }
+            } else {
+                img.onload = (function (j) {
+                    return function () {
+                        imgs[j] = img;
+                        len--;
+                        if (len == 0) {
+                            def.resolve();
+                        }
+                    };
+                })(i);
+                img.onerror = function () {
+                    len--;
+                    //console.log('fail to load image');
+                };
+            }
+        });
+        return def.promise();
+    }
+    var list = ["./01/003.jpg"],
+    //此处省略一万个字符
+    imgs = [];
+    $.when(preloadImg(list, imgs)).done(function () {
+        //预加载结束
+        var _height = window.screen.availHeight;
+        var _width = window.screen.availWidth;
+        var _top = (_height - 322) / 2 - 50 + "px";
+        var _left = _width - (_width * 0.382) - 200 + "px";
+        $(".bd ul li").eq(0).append(imgs[0]).append("<div class=\"pict_01\" style=\"top:" + _top + ";left:" + _left + ";\"><img src=\"./01/index_04.png\" style='height:auto;'></div><div class=\"pict_02\" >我缘自十万大山，清新自然</div>").fadeIn();//<div class=\"pict_02\">一书一茶，一份聆听繁花落地的心</div>
+        //图片宽高判断
+        AutoResizeImg(imgs[0]);
+    });
+
+</script>
+<!-- 首页图片轮播-结束-->
+<!-- 首页预定入口-开始-->
+<div class="serch_hotel" style="margin-right: 0px;">
+    <div class="book_icon">
+        <img src="01/icon_book.png">
+    </div>
+    <div class="serch_form">
+        <div class="clear title">
+            亚朵酒店预订
+        </div>
+        <div class="clear">
+            <b class="clear">入住城市</b><b>
+                <input type="text" class="input" id="CityName" value="西安市">
+                <input type="hidden" id="hcity" value="291">
+            </b>
+        </div>
+        <div class="clear">
+            <b class="clear">入住日期</b><b><input type="text" class="input" id="CheckInDate" placeholder="请输入入住日期" readonly="true"></b>
+        </div>
+        <div class="clear">
+            <b class="clear">离店日期</b><b><input type="text" class="input" id="CheckOutDate" placeholder="请输入离店日期" readonly="true"></b>
+        </div>
+        <div class="clear mrgl80 pdt10">
+            <input type="button" class="btn normal" id="btnQuery" value="立即搜索">
+        </div>
+    </div>
+</div>
+
+        </section>
+    </div>
+    <!-- 容器-结束 -->
+    <!-- 尾部-开始 -->
+    <div class="footer">
+        <div class="footer-group">
+            <div class="footer-logo left">
+                <img src="01/bar_code.jpg">
+            </div>
+            <div class="footer-links left">
+                <ul>
+                    <li>特许合作
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutProducts">产品介绍</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutCondition">特许合作条件</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutProcess">特许合作流程</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutToll">收费标准</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutSupport">特许服务支持</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/Cooperation">加盟申请</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>亚朵招聘
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/Recruitment">酒店经理</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>亚朵why
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutHotel">亚朵简介</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/ContactHotel">联系我们</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        会员手册
+                    </li>
+                    
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutMember">入会须知</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/MebInterest">会员权益</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/JoinUpgrade">会员升级保级</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/MebPreferential">会员优惠政策</a>
+                    </li>
+                    
+                </ul>
+                <div class="footer-wx">
+                    <span style="font-size: 15px; font-weight: bold; margin-bottom: 5px;">联系我们</span>
+                    <span>客服热线：<b style="font-size: 15px;color:red;">4000 606 606</b></span>
+                    <span>总部咨询：021-64059928</span>
+                    <span>上海市闵行区吴中路618号吴中大厦18楼亚朵生活</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-rigts">
+            <span>Copyright 2016 YaDuo Resort All Rights Reserved.亚朵(上海)酒店管理有限公司</span>
+            <span class="left">沪ICP备13021769</span>
+            <span>
+                <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=1u2xwmwzpxrk6u2rvor2928au92degmyr8rxc2y7jpk9gk7" target="_blank">
+                    <img src="01/none.png" class="pdl10">
+                </a>
+            </span>
+        </div>
+    </div>
+    <!-- 尾部-结束 -->
+    <!-- 页面布局-结束 -->
+    <input type="hidden" id="_mebid" value="0">
+
+
+</body></html>

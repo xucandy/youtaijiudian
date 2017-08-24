@@ -1,0 +1,274 @@
+
+<!-- saved from url=(0030)http://www.yaduo.com/Meb/Index -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>亚朵ATOUR---人文、温暖、有趣的生活方式品牌</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="亚朵,酒店,亚朵酒店,轻居,公寓,亚朵轻居,亚朵公寓,Atour,YaDuo,AtourHotel,亚朵酒店官方网站,AtourHotel官方网站,人文酒店,酒店,在线销售酒店,云服务酒店,酒店预订,酒店查询,酒店入住">
+    <meta name="description" content="亚朵ATOUR---人文、温暖、有趣的生活方式品牌">
+    <link href="http://www.yaduo.com/favicon.ico" rel="shortcut icon">
+    <link href="./01/layout_normal.css" rel="stylesheet">
+    <link href="./01/style.css" rel="stylesheet">
+    <link href="./01/layer.css" rel="stylesheet">
+    <link href="./01/laydate.css" rel="stylesheet">
+    <link href="./01/laydate(1).css" rel="stylesheet">
+    <script src="./01/hm.js"></script><script type="text/javascript" src="./01/jquery.js"></script>
+    <script type="text/javascript" src="./01/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="./01/jquery.pagination.js"></script>
+    <script type="text/javascript" src="./01/jquery.lazy.js"></script>
+    <script type="text/javascript" src="./01/layer.js"></script>
+    <script type="text/javascript" src="./01/base.space.js"></script>
+    <script type="text/javascript" src="./01/base.js"></script><script type="text/javascript" src="./01/hax_dec.js"></script>
+    <script type="text/javascript" src="./01/base.extend.js"></script>
+    <script type="text/javascript" src="./01/mesignout.js"></script>
+    
+    <script src="./01/meblogin.js"></script>
+    <script src="./01/layer.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?fabab653d8532755b944daf1fd030381";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+<body>
+    <!--  全屏背景 Start  -->
+    <div id="fullback" style="background: url(01/sec_bg.jpg) no-repeat center top fixed; background-size: cover;">
+        <!-- 页面布局-开始 -->
+        <!-- 头部-开始 -->
+        <div class="header">
+            <div class="menu">
+                <ul class="nav left">
+                  <li class="active">
+                    <a href="Index.html">首页</a>
+                </li>
+                <li>
+                    <a href="Hotel.html">在线预订</a>
+                </li>
+                <li>
+                    <a href="Experience.html">感受亚朵</a>
+                </li>
+                <li>
+                    <a href="">
+                        <img class="left logo" src="01/LOGO.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="ProductsList.html">睡我所爱</a>
+                </li>
+                <li>
+                    <a href="planetbed.html">亚朵商城</a>
+                </li>
+                <li>
+                    <a href="myIndex.html">我的亚朵</a>
+                </li>
+                </ul>
+
+            </div>
+            <div class="login_place">
+                <a href="javascript:void(0);">登录</a>
+                <a href="javascript:void(0);" style="display: none;">注销</a>
+            </div>
+        </div>
+        <!-- 头部-结束 -->
+        <!-- 容器-开始 -->
+        <div class="container">
+            
+
+
+
+
+<script>
+    var params = new Common.Query.M();
+    params.setParameters("AdvertisementType", 3);   //首页AdvertisementType为3
+    //获取广告
+    Atour.Ajax.Get({
+        Url: "/yaduo/Inn/GetAdvertisementByType",
+        DataParam: params.getString(false),
+        FuncName: "changeAdvertisement"
+    });
+    //显示广告
+    function changeAdvertisement(result) {
+        if (result.State == 1) {
+            if (result.Data.ImageUrl != null && result.Data.ImageUrl != "") {         //该位置有广告上线，没有则使用默认的
+                var Advertisement = $("#Advertisement");
+                Advertisement.attr("src", result.Data.ImageUrl);
+                if (result.Data.PageUrl != null && result.Data.PageUrl != "") {       //该广告有链接
+                    Advertisement.attr("onclick", 'location.href =' + "'" + result.Data.PageUrl + "'" + '');
+                    Advertisement.attr("style", "cursor:pointer; width: 757px; border-left: 3px solid #DBBA9B;");
+                }
+                return;
+            }
+        }
+        return;
+    }
+</script>
+
+<!-- 会员登录 开始-->
+<div class="login_panel">
+    <div class="login_panel_box">
+        <div class="left lform">
+            <div class="m_user">
+                <b class="title">亚朵会员登录</b>
+                <span>
+                    <b class="left">手机号</b><b class="left">
+                        <input type="text" id="userName" class="input" placeholder="请输入手机号" value="">
+                    </b>
+                    <b class="left clear">密&nbsp;&nbsp;&nbsp;码</b><b class="left">
+                        <input type="password" id="pwd" class="input" value="">
+                    </b>
+
+                    <b class="left clear">验证码</b><b class="left">
+                        <input type="text" id="code" class="input" style="display:block;">
+                        <img src="./01/CreateCode" style="position: absolute; margin-top: -31px; margin-left: 133px;" id="imgcode" onclick="$(this).attr(&#39;src&#39;, &#39;/Meb/CreateCode?time=&#39; + (new Date()).getTime());" title="看不清楚？换个图片">
+                    </b>
+                    
+                    
+                    
+                </span>
+                <div class="mrgl60">
+                    <span class="block ">
+                        <input id="btn_login" type="button" class="btn normal left" value="登录">
+                        <input id="btn_register" type="button" class="btn orange left" style="margin-left: 5px;" value="注册">
+
+                        
+
+                    </span>
+                </div>
+                <div style="clear: both;">
+                </div>
+                <div class="mrgl60">
+                    <span class="block fgtpw">
+                        <input type="checkbox" id="keepLogin">&nbsp;下次自动登录 &nbsp;&nbsp;
+                        <a href="http://www.yaduo.com/Meb/ResetPass">忘记密码</a>
+                    </span>
+                </div>
+            </div>
+            <div class="m_user mrgt20">
+                <b class="title">非会员订单查询</b>
+                <span>
+                    <b class="left clear">手机号</b><b class="left">
+                        <input type="text" class="input" placeholder="预订人手机号" id="txtQueryMobile">
+                    </b>
+                    <b class="left clear">验证码</b><b class="left">
+                        <input type="text" id="codefhy" class="input" style="display:block;">
+                        <img src="./01/CreateCodeFHY" style="position: absolute; margin-top: -31px; margin-left: 133px;" id="imgcodefhy" onclick="$(this).attr(&#39;src&#39;, &#39;/Meb/CreateCodeFHY?time=&#39; + (new Date).getTime());" title="看不清楚？换个图片">
+                    </b>
+                    <b class="left clear">手机验证码</b><b class="left">
+                        <input type="text" class="input" placeholder="手机验证码" id="txtQueryCode" style="display:block;width: 185px;margin-left: 10px;">
+                        <a href="http://www.yaduo.com/Meb/Index#" id="btn_mobile_code" style="position: absolute; margin-top: -32px; margin-left: 125px;" onclick="YD.MebLogin.SendCode()">获取验证码</a>
+                    </b>
+                </span>
+
+                <span class="left  mrgl60" style="*margin-left: 30px; *margin-top: 0px;">
+                    <input id="btn_serch" type="button" class="btn orange left" value="查询">
+                </span>
+            </div>
+        </div>
+        <div class="right login_ad">
+            <img id="Advertisement" src="./01/login_ad_04.jpg" style="width: 757px; border-left: 3px solid #DBBA9B;">
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+    <!-- 容器-结束 -->
+    <!-- 尾部-开始 -->
+    <div class="footer">
+        <div class="footer-group">
+            <div class="footer-logo left">
+                <img src="./01/bar_code.jpg">
+            </div>
+            <div class="footer-links left">
+                <ul>
+                    <li>
+                        特许合作
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutProducts">产品介绍</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutCondition">特许合作条件</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutProcess">特许合作流程</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutToll">收费标准</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutSupport">特许服务支持</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/Cooperation">加盟申请</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        亚朵招聘
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/Recruitment">酒店经理</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>
+                        亚朵why
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutHotel">亚朵简介</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/ContactHotel">联系我们</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        会员手册
+                    </li>
+                    
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/AboutMember">入会须知</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/MebInterest">会员权益</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/JoinUpgrade">会员升级保级</a>
+                    </li>
+                    <li>
+                        <a href="http://www.yaduo.com/Normal/MebPreferential">会员优惠政策</a>
+                    </li>
+                    
+                </ul>
+                <div class="footer-wx">
+                    <span style="font-size: 15px; font-weight: bold; margin-bottom: 5px;">联系我们</span>
+                    <span>客服热线：<b style="font-size: 15px; color: red;">4000 606 606</b></span>
+                    <span>总部咨询：021-64059928</span>
+                    <span>上海市闵行区吴中路618号吴中大厦18楼亚朵生活</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-rigts">
+            <span>Copyright 2016 YaDuo Resort All Rights Reserved.亚朵(上海)酒店管理有限公司</span>
+            <span class="left">沪ICP备13021769</span>
+            <span>
+                <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=1u2xwmwzpxrk6u2rvor2928au92degmyr8rxc2y7jpk9gk7" target="_blank">
+                    <img src="./01/none.png" class="pdl10">
+                </a>
+            </span>
+        </div>
+    </div>
+    <!-- 尾部-结束 -->
+    <!-- 页面布局-结束 -->
+    <input type="hidden" id="_mebid" value="0">
+
+
+</body></html>

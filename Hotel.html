@@ -1,0 +1,278 @@
+
+<!-- saved from url=(0028)http://yaduo.com/Hotel/Index -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>亚朵ATOUR---人文、温暖、有趣的生活方式品牌</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="亚朵,酒店,亚朵酒店,轻居,公寓,亚朵轻居,亚朵公寓,Atour,YaDuo,AtourHotel,亚朵酒店官方网站,AtourHotel官方网站,人文酒店,酒店,在线销售酒店,云服务酒店,酒店预订,酒店查询,酒店入住">
+    <meta name="description" content="亚朵ATOUR---人文、温暖、有趣的生活方式品牌">
+    <link href="http://www.yaduo.com/favicon.ico" rel="shortcut icon">
+    <link href="01/layout_normal.css" rel="stylesheet">
+    <link href="01/style.css" rel="stylesheet">
+    <link href="01/layer.css" rel="stylesheet">
+    <link href="01/laydate.css" rel="stylesheet">
+    <link href="01/laydate(1).css" rel="stylesheet">
+    <script src="01/hm.js"></script><script type="text/javascript" src="01/jquery.js"></script>
+    <script type="text/javascript" src="01/jquery.nicescroll.js"></script>
+    <script type="text/javascript" src="01/jquery.pagination.js"></script>
+    <script type="text/javascript" src="01/jquery.lazy.js"></script>
+    <script type="text/javascript" src="01/layer.js"></script>
+    <script type="text/javascript" src="01/base.space.js"></script>
+    <script type="text/javascript" src="01/base.js"></script><script type="text/javascript" src="01/hax_dec.js"></script>
+    <script type="text/javascript" src="01/base.extend.js"></script>
+    <script type="text/javascript" src="01/mesignout.js"></script>
+    
+    <script src="01/laydate.js"></script>
+    <script src="01/index.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?fabab653d8532755b944daf1fd030381";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+<body>
+    <!--  全屏背景 Start  -->
+    <div id="fullback" style="background: url(01/sec_bg.jpg) no-repeat center top fixed; background-size: cover;">
+        <!-- 页面布局-开始 -->
+        <!-- 头部-开始 -->
+        <div class="header">
+            <div class="menu">
+                <ul class="nav left">
+                    <li class="active">
+                    <a href="Index.html">首页</a>
+                </li>
+                <li>
+                    <a href="Hotel.html">在线预订</a>
+                </li>
+                <li>
+                    <a href="Experience.html">感受亚朵</a>
+                </li>
+                <li>
+                    <a href="http://yaduo.com/">
+                        <img class="left logo" src="01/LOGO.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="ProductsList.html">睡我所爱</a>
+                </li>
+                <li>
+                    <a href="planetbed.html">亚朵商城</a>
+                </li>
+                <li>
+                    <a href="myIndex.html">我的亚朵</a>
+                </li>
+                </ul>
+
+            </div>
+            <div class="login_place">
+                <a href="javascript:void(0);">登录</a>
+                <a href="javascript:void(0);" style="display: none;">注销</a>
+            </div>
+        </div>
+        <!-- 头部-结束 -->
+        <!-- 容器-开始 -->
+        <div class="container">
+            
+
+<script src="01/city_data.js"></script>
+<script src="01/citySelf.js"></script>
+
+
+<script>
+    var params = new Common.Query.M();
+    params.setParameters("AdvertisementType", 2);   //在线预订AdvertisementType为2
+    //获取广告
+    Atour.Ajax.Get({
+        Url: "/yaduo/Inn/GetAdvertisementByType",
+        DataParam: params.getString(false),
+        FuncName: "changeAdvertisement"
+    });
+    //显示广告
+    function changeAdvertisement(result) {
+        if (result.State == 1) {
+            if (result.Data.ImageUrl != null && result.Data.ImageUrl != "") {         //该位置有广告上线，没有则使用默认的
+                var Advertisement = $("#Advertisement");
+                Advertisement.attr("src", result.Data.ImageUrl);
+                if (result.Data.PageUrl != null && result.Data.PageUrl != "") {       //该广告有链接
+                    Advertisement.attr("onclick", 'location.href =' + "'" + result.Data.PageUrl + "'" + '');
+                }
+                else {                                                                //该广告没有链接，则不设页面跳转
+                    Advertisement.removeAttr("onclick");
+                    Advertisement.attr("style", "width: 100%;");
+                }
+                return;
+            }
+            else {
+                var Advertisement = $("#Advertisement");
+                Advertisement.attr("src", "01/banner001.jpg");
+            }
+        }
+        return;
+    }
+</script>
+
+<style>
+    .item_hotels{
+        margin-bottom:30px;
+    }
+</style>
+
+<!-- 促销活动 开始-->
+<div class="slider_ad">
+    <img id="Advertisement" style="cursor:pointer; width: 100%;" onclick="location.href =&#39;http://www.yaduo.com/Normal/MebInterest&#39;" src="01/2016061216131702_964458.jpg">
+    <img src="01/opacity_85.png" style="display: none;">
+</div>
+<!-- 促销活动 结束-->
+<!-- 搜索栏 开始-->
+<div class="serch_bar">
+    <div class="input-group">
+        <div class="input-group-item" id="query">
+            <b>
+                <input type="checkbox" checked="checked" value="1" class="brand" id="Brand1" style="cursor:pointer">
+                <label for="Brand1" style="cursor:pointer">亚朵酒店</label>
+            </b>
+            <b>
+                <input type="checkbox" checked="checked" value="2" class="brand" id="Brand2" style="cursor:pointer">
+                <label for="Brand2" style="cursor:pointer">有遇</label>
+            </b>
+            <b>
+                <input type="checkbox" checked="checked" value="3" class="brand" id="Brand3" style="cursor:pointer">
+                <label for="Brand3" style="cursor:pointer">亚朵轻居</label>
+            </b>
+        </div>
+        <div class="input-group-item">
+            <span>城市：</span>
+            <input type="text" class="input" id="CityName" value="">
+            <input type="hidden" id="hcity" value="0">
+        </div>
+        <div class="input-group-item">
+            <span>入住日期：</span><input class="input" id="CheckInDate" placeholder="请输入入住日期" readonly="true">
+        </div>
+        <div class="input-group-item" style="display:none;">
+            <span>离店日期：</span><input class="input" id="CheckOutDate" placeholder="请输入离店日期" readonly="true">
+        </div>
+        <div class="input-group-item">
+            <span>关键字：</span><input type="text" class="input" id="Tag" value="">
+        </div>
+
+        <div class="input-group-item">
+            <input type="button" value="查询" class="btn orange" id="btnQuery">
+        </div>
+    </div>
+</div>
+<!-- 搜索栏 结束-->
+<!-- 酒店列表 开始-->
+<div class="hotel_list">
+    
+    <div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2017022718375985_973519.jpg" id="img310011"><span class="item_img_see" onclick="LookPhoto(310011)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=310011">The Drama</a></span></div><div class="item_address"><span>地址：上海市静安区北京西路1013号</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(310011)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：021-62586001</span></div><div class="item_hotels" id="item_hotels310011"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>十二夜</td><td>1888</td><td>1737</td><td><a href="http://yaduo.com/Hotel/market?chainid=310011&amp;roomtypeid=63&amp;checkindate=2017-08-06&amp;m=5" ;="">32000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310011,63)"></td></tr><tr><td>大欢喜</td><td>2188</td><td>2013</td><td><a href="http://yaduo.com/Hotel/market?chainid=310011&amp;roomtypeid=61&amp;checkindate=2017-08-06&amp;m=5" ;="">32000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310011,61)"></td></tr><tr><td>仲夏夜</td><td>2388</td><td>2197</td><td><a href="http://yaduo.com/Hotel/market?chainid=310011&amp;roomtypeid=62&amp;checkindate=2017-08-06&amp;m=5" ;="">32000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310011,62)"></td></tr><tr class="hide"><td>威尼斯</td><td>1588</td><td>1461</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname310011" value="The Drama"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2017012111152288_438928.jpg" id="img110003"><span class="item_img_see" onclick="LookPhoto(110003)">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=110003">北京金融街亚朵S·吴酒店</a></span></div><div class="item_address"><span>地址：北京市西城区新文化街82号（闹市口大街新文化街交汇）</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(110003)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：010-83664888</span></div><div class="item_hotels" id="item_hotels110003"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>高级双床房</td><td>999</td><td>919</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=8&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,8)"></td></tr><tr><td>高级大床房</td><td>999</td><td>919</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=9&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,9)"></td></tr><tr><td>朵霾几木大床房</td><td>1199</td><td>1103</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=45&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,45)"></td></tr><tr class="hide"><td>朵霾几木双床房</td><td>1199</td><td>1103</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=48&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,48)"></td></tr><tr class="hide"><td>朵霾几木景观大床房</td><td>1399</td><td>1287</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=46&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,46)"></td></tr><tr class="hide"><td>朵霾几木景观双床房</td><td>1399</td><td>1287</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=49&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,49)"></td></tr><tr class="hide"><td>几木景观开运大床房</td><td>1599</td><td>1471</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=73&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,73)"></td></tr><tr class="hide"><td>几木景观养生大床房</td><td>1699</td><td>1563</td><td><a href="http://yaduo.com/Hotel/market?chainid=110003&amp;roomtypeid=74&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110003,74)"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname110003" value="北京金融街亚朵S·吴酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2016081910271791_773866.jpg" id="img440301"><span class="item_img_see" onclick="LookPhoto(440301)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=440301">深圳滨河时代亚朵S酒店</a></span></div><div class="item_address"><span>地址：深圳市福田区滨河大道9289号京基滨河时代大厦B座</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(440301)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：0755-33016688</span></div><div class="item_hotels" id="item_hotels440301"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>行政标准房</td><td>969</td><td>891</td><td><a href="http://yaduo.com/Hotel/market?chainid=440301&amp;roomtypeid=4&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440301,4)"></td></tr><tr><td>行政大床房</td><td>969</td><td>891</td><td><a href="http://yaduo.com/Hotel/market?chainid=440301&amp;roomtypeid=3&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440301,3)"></td></tr><tr><td>几木大床房</td><td>1099</td><td>1011</td><td><a href="http://yaduo.com/Hotel/market?chainid=440301&amp;roomtypeid=53&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440301,53)"></td></tr><tr class="hide"><td>高级套房</td><td>1199</td><td>1103</td><td><a href="http://yaduo.com/Hotel/market?chainid=440301&amp;roomtypeid=17&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440301,17)"></td></tr><tr class="hide"><td>行政套房</td><td>1299</td><td>1195</td><td><a href="http://yaduo.com/Hotel/market?chainid=440301&amp;roomtypeid=5&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440301,5)"></td></tr><tr class="hide"><td>高级大床房</td><td>869</td><td>799</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname440301" value="深圳滨河时代亚朵S酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2017080520271048_19648.jpg" id="img130303"><span class="item_img_see" onclick="LookPhoto(130303)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=130303">秦皇岛北戴河洲顿亚朵酒店</a></span></div><div class="item_address"><span>地址：秦皇岛市北戴河东经路1888号</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(130303)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：0335-4040818</span></div><div class="item_hotels" id="item_hotels130303"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>高级大床房</td><td>868</td><td>799</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr><td>几木大床房</td><td>968</td><td>891</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr><td>几木双床房</td><td>988</td><td>909</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木套房</td><td>1288</td><td>1185</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname130303" value="秦皇岛北戴河洲顿亚朵酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2017063015083521_278195.jpg" id="img330107"><span class="item_img_see" onclick="LookPhoto(330107)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=330107">杭州滨江亚朵S·网易严选酒店</a></span></div><div class="item_address"><span>地址：杭州市滨江区江陵路1916号（星耀城二期3幢）</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(330107)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：0571-88136233</span></div><div class="item_hotels" id="item_hotels330107"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>高级大床房</td><td>769</td><td>707</td><td><a href="http://yaduo.com/Hotel/market?chainid=330107&amp;roomtypeid=9&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(330107,9)"></td></tr><tr><td>高级双床房</td><td>819</td><td>753</td><td><a href="http://yaduo.com/Hotel/market?chainid=330107&amp;roomtypeid=8&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(330107,8)"></td></tr><tr><td>几木大床房</td><td>859</td><td>790</td><td><a href="http://yaduo.com/Hotel/market?chainid=330107&amp;roomtypeid=3&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(330107,3)"></td></tr><tr class="hide"><td>几木双床房</td><td>899</td><td>827</td><td><a href="http://yaduo.com/Hotel/market?chainid=330107&amp;roomtypeid=4&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(330107,4)"></td></tr><tr class="hide"><td>网易严选房</td><td>1199</td><td>1103</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname330107" value="杭州滨江亚朵S·网易严选酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2016080814580262_784353.jpg" id="img110004"><span class="item_img_see" onclick="LookPhoto(110004)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=110004">北京三元桥亚朵酒店</a></span></div><div class="item_address"><span>地址：北京市朝阳区东三环北路甲2号（京信大厦）</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(110004)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：010-87411666</span></div><div class="item_hotels" id="item_hotels110004"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>雅致房</td><td>659</td><td>606</td><td><span>---</span></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110004,2)"></td></tr><tr><td>几木双床房</td><td>859</td><td>790</td><td><a href="http://yaduo.com/Hotel/market?chainid=110004&amp;roomtypeid=4&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110004,4)"></td></tr><tr><td>几木大床房</td><td>859</td><td>790</td><td><a href="http://yaduo.com/Hotel/market?chainid=110004&amp;roomtypeid=3&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110004,3)"></td></tr><tr class="hide"><td>朵霾几木大床房</td><td>999</td><td>919</td><td><a href="http://yaduo.com/Hotel/market?chainid=110004&amp;roomtypeid=45&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110004,45)"></td></tr><tr class="hide"><td>几木套房</td><td>1099</td><td>1011</td><td><a href="http://yaduo.com/Hotel/market?chainid=110004&amp;roomtypeid=5&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(110004,5)"></td></tr><tr class="hide"><td>高级双床房</td><td>699</td><td>643</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>高级大床房</td><td>699</td><td>643</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname110004" value="北京三元桥亚朵酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2016070100192757_836039.jpg" id="img130301"><span class="item_img_see" onclick="LookPhoto(130301)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=130301">秦皇岛香玺海亚朵酒店</a></span></div><div class="item_address"><span>地址：秦皇岛市海港区金梦海湾兴龙香玺海6号楼</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(130301)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：0335-3535577</span></div><div class="item_hotels" id="item_hotels130301"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>高级双床房</td><td>638</td><td>587</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr><td>几木大床房</td><td>668</td><td>615</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr><td>几木双床房</td><td>668</td><td>615</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>高级海景双床房</td><td>708</td><td>651</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木海景双床房</td><td>768</td><td>707</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木海景大床房</td><td>768</td><td>707</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木套房</td><td>1008</td><td>927</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木海景套房</td><td>1008</td><td>927</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname130301" value="秦皇岛香玺海亚朵酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2015092111025270_789703.JPG" id="img200003"><span class="item_img_see" onclick="LookPhoto(200003)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=200003">上海徐家汇亚朵酒店</a></span></div><div class="item_address"><span>地址：上海市徐汇区文定路199号</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(200003)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：021-64315666</span></div><div class="item_hotels" id="item_hotels200003"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>高级大床房</td><td>619</td><td>569</td><td><a href="http://yaduo.com/Hotel/market?chainid=200003&amp;roomtypeid=9&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(200003,9)"></td></tr><tr><td>几木大床房</td><td>699</td><td>643</td><td><a href="http://yaduo.com/Hotel/market?chainid=200003&amp;roomtypeid=3&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(200003,3)"></td></tr><tr><td>高级双床房</td><td>619</td><td>569</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木双床房</td><td>699</td><td>643</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname200003" value="上海徐家汇亚朵酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2017042717152565_843371.jpg" id="img310013"><span class="item_img_see" onclick="LookPhoto(310013)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=310013">上海虹口大柏树亚朵酒店</a></span></div><div class="item_address"><span>地址：上海市虹口区曲阳路1000号上海外服大厦</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(310013)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：021-55979999</span></div><div class="item_hotels" id="item_hotels310013"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>高级大床房</td><td>619</td><td>569</td><td><a href="http://yaduo.com/Hotel/market?chainid=310013&amp;roomtypeid=9&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310013,9)"></td></tr><tr><td>几木双床房</td><td>729</td><td>671</td><td><a href="http://yaduo.com/Hotel/market?chainid=310013&amp;roomtypeid=4&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310013,4)"></td></tr><tr><td>几木大床房</td><td>729</td><td>671</td><td><a href="http://yaduo.com/Hotel/market?chainid=310013&amp;roomtypeid=3&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310013,3)"></td></tr><tr class="hide"><td>几木套房</td><td>1009</td><td>928</td><td><a href="http://yaduo.com/Hotel/market?chainid=310013&amp;roomtypeid=5&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(310013,5)"></td></tr><tr class="hide"><td>高级双床房</td><td>619</td><td>569</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname310013" value="上海虹口大柏树亚朵酒店"></div><div class="hotel_item"><div class="left item_img"><img class="lazy-load" src="01/2016122616033569_677156.jpg" id="img440303"><span class="item_img_see" onclick="LookPhoto(440303)" style="opacity: 0.6;">查看图片</span></div><div class="left item_details"><div><span class="item_icon left"><img src="01/LOGO1.png"></span><span class="item_title"><a href="http://yaduo.com/Hotel/HotelDetails?chainid=440303">深圳南山海岸城亚朵酒店</a></span></div><div class="item_address"><span>地址：深圳市南山区南海大道2225号海王大厦A座（南海大道与创业路交汇处）</span><a href="http://yaduo.com/Hotel/Index#" onclick="goMap(440303)" title="查看地图" style="color:#e8e8e8;"><img style="height:20px;margin:-5px 5px -4px 10px;" src="01/map.png"></a><br><span>电话：0755-33061888</span></div><div class="item_hotels" id="item_hotels440303"><table border="0" cellspacing="0" cellpadding="0" class="tblhotels"><thead><tr><th>房型</th><th>门市价</th><th>官网预订价</th><th>积分兑换</th><th>&nbsp;</th></tr></thead><tbody><tr><td>雅致房</td><td>609</td><td>560</td><td><span>---</span></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440303,2)"></td></tr><tr><td>高级大床房</td><td>709</td><td>652</td><td><a href="http://yaduo.com/Hotel/market?chainid=440303&amp;roomtypeid=9&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440303,9)"></td></tr><tr><td>几木双床房</td><td>809</td><td>744</td><td><a href="http://yaduo.com/Hotel/market?chainid=440303&amp;roomtypeid=4&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440303,4)"></td></tr><tr class="hide"><td>高级套房</td><td>1049</td><td>965</td><td><a href="http://yaduo.com/Hotel/market?chainid=440303&amp;roomtypeid=17&amp;checkindate=2017-08-06&amp;m=3" ;="">24000积分</a></td><td><input type="button" value="预订" class="btn normal" onclick="bookRoom(440303,17)"></td></tr><tr class="hide"><td>高级双床房</td><td>709</td><td>652</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr><tr class="hide"><td>几木大床房</td><td>809</td><td>744</td><td>---</td><td><input type="button" value="已满房" class="btn disabled"></td></tr></tbody><tfoot><tr><td colspan="6" style="text-align:right;"><a href="javascript:void(0);">查看更多</a></td></tr></tfoot></table></div></div><input type="hidden" id="chainname440303" value="深圳南山海岸城亚朵酒店"></div><div class="pages"><b class="disabled"><a href="javascript:void(0);">上一页</a></b><span class="active"><a href="javascript:void(0);">1</a></span><span><a href="javascript:void(0);">2</a></span><span><a href="javascript:void(0);">3</a></span><span><a href="javascript:void(0);">4</a></span><span><a href="javascript:void(0);">5</a></span><span><a href="javascript:void(0);">6</a></span><span><a href="javascript:void(0);">7</a></span><span><a href="javascript:void(0);">8</a></span><span><a href="javascript:void(0);">9</a></span><span><a href="javascript:void(0);">10</a></span><b><a href="javascript:void(0);">下一页</a></b></div>
+</div>
+<!-- 酒店列表 结束-->
+<input type="hidden" id="MebTypeID" value="0">
+<input type="hidden" id="tableHeradName" value="官网预订价">
+
+
+
+
+
+        </div>
+    </div>
+    <!-- 容器-结束 -->
+    <!-- 尾部-开始 -->
+    <div class="footer">
+        <div class="footer-group">
+            <div class="footer-logo left">
+                <img src="01/bar_code.jpg">
+            </div>
+            <div class="footer-links left">
+                <ul>
+                    <li>
+                        特许合作
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutProducts">产品介绍</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutCondition">特许合作条件</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutProcess">特许合作流程</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutToll">收费标准</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutSupport">特许服务支持</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/Cooperation">加盟申请</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        亚朵招聘
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/Recruitment">酒店经理</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>
+                        亚朵why
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutHotel">亚朵简介</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/ContactHotel">联系我们</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        会员手册
+                    </li>
+                    
+                    <li>
+                        <a href="http://yaduo.com/Normal/AboutMember">入会须知</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/MebInterest">会员权益</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/JoinUpgrade">会员升级保级</a>
+                    </li>
+                    <li>
+                        <a href="http://yaduo.com/Normal/MebPreferential">会员优惠政策</a>
+                    </li>
+                    
+                </ul>
+                <div class="footer-wx">
+                    <span style="font-size: 15px; font-weight: bold; margin-bottom: 5px;">联系我们</span>
+                    <span>客服热线：<b style="font-size: 15px; color: red;">4000 606 606</b></span>
+                    <span>总部咨询：021-64059928</span>
+                    <span>上海市闵行区吴中路618号吴中大厦18楼亚朵生活</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-rigts">
+            <span>Copyright 2016 YaDuo Resort All Rights Reserved.亚朵(上海)酒店管理有限公司</span>
+            <span class="left">沪ICP备13021769</span>
+            <span>
+                <a href="https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=1u2xwmwzpxrk6u2rvor2928au92degmyr8rxc2y7jpk9gk7" target="_blank">
+                    <img src="01/none.png" class="pdl10">
+                </a>
+            </span>
+        </div>
+    </div>
+    <!-- 尾部-结束 -->
+    <!-- 页面布局-结束 -->
+    <input type="hidden" id="_mebid" value="0">
+
+
+</body></html>
